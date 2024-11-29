@@ -237,7 +237,7 @@ header a img {
 
 /* TOUR SECTION */
 .tour-banner{
-    background: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/Tour photo.jpg") no-repeat center center/cover;
+    background: url("images/Tour photo.jpg") no-repeat center center/cover;
     background-size: cover;
     height: 80vh;
     position: relative;
@@ -618,7 +618,7 @@ footer a:hover {
 /*header*/
 .Header {
     position: relative;  
-    background-image: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/team photo.webp"); 
+    background-image: url("images/team photo.webp"); 
     background-size: cover;  /* Make sure the image covers the entire section */
     background-position: center;  
     height: 250px;  /* Set a fixed height for the header */
@@ -755,7 +755,7 @@ footer a:hover {
 /*banner*/
 .members-header {
     position: relative;  
-    background-image: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/team_photo_members.png"); 
+    background-image: url("images/team_photo_members.png"); 
     background-size: cover;  /* Make sure the image covers the entire section */
     background-position: center;  
     height: 250px;  /* Set a fixed height for the header */
@@ -817,7 +817,7 @@ footer a:hover {
 
 /* Hover effects for images */
 .left-box1 img:hover, .right-box2 img:hover, .left-box3 img:hover, .right-box4 img:hover, .left-box5 img:hover {
-    content: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/louis image2.jpg");
+    content: url("images/louis image2.jpg");
 }
 
 /* Make sure images in right box fill space without distortion */
@@ -964,7 +964,7 @@ footer a:hover {
 /*ALBUMS PAGE CSS*/
 .albums-header{
     position: relative;
-    background-image: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/team photo banner for store.jpg");
+    background-image: url("images/team photo banner for store.jpg");
     background-size: cover;
     background-position: center;
     height: 250px;
@@ -1042,7 +1042,7 @@ footer a:hover {
 /*STORE PAGE CSS*/
 .store-header{
     position: relative;
-    background-image: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/team photo banner for store.jpg");
+    background-image: url("images/team photo banner for store.jpg");
     background-size: cover;
     background-position: center;
     height: 250px;
