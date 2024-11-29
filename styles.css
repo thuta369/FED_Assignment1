@@ -1,0 +1,1061 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter',sans-serif;
+    background-color: rgb(36, 35, 35);
+}
+
+/*MAIN MENU CSS*/
+.header {
+    display: flex;
+    background-image: url("images/1D photoshoot.webp");
+    background-size: 100%; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    position: relative;
+}
+
+/* Rectangle Box Styling */
+.rectangle-box {
+    position: absolute;
+    top: 60%; /*brings the box up/down*/
+    right: 200px; 
+    transform: translateY(-50%); 
+    background-color: white; ;   
+    border-radius: 50px;
+    width: 400px; 
+    height: 40px; 
+    color: black; /*text colour inside the box*/
+    font-size: 30px; 
+    font-weight: bold;
+    padding: 10px; /*padding for content inside the rectangle */
+    text-align: center; /*centers the text inside the box */
+    line-height: 40px; /*vertically centers text inside the box */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and shadow */
+    cursor: pointer; 
+}
+
+/* Hover Effect */
+.rectangle-box:hover {
+    background-color: rgb(194, 40, 40); /* Darken the background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+}
+
+/* Box Text Styling */
+.box-text {
+    display: block; /* Makes the "LISTEN NOW" text block level */
+    font-size: 16px; /* Smaller font size */
+    margin-bottom: 5px; 
+}
+
+/* Text on top of the box */
+.box-text {
+    position: absolute;
+    top: -50px; /* Position the text above the rectangle */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text horizontally above the box */
+    color: white;  
+    padding: 5px 10px; /* Padding for better readability */
+    font-size: 30px; /* Adjust font size for the text */
+    font-weight: bold;
+}
+
+/*responsiveness*/
+@media screen and (max-width: 768px) {
+    .header {
+        height: auto;
+        padding: 30px 0; 
+        background-size: contain;
+    }
+
+    .rectangle-box {
+        width: 80%;  
+        right: 0; 
+        font-size: 24px;  
+        top: 50%; 
+        transform: translateY(-50%);
+    }
+
+    .box-text {
+        font-size: 24px; 
+        top: -40px; 
+    }
+}
+
+/*for mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .header {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .rectangle-box {
+        width: 90%;  /* Further reduce the width */
+        right: 0;
+        font-size: 20px;  /* Even smaller font size */
+        top: 50%;  /* Keep it centered vertically */
+    }
+
+    .box-text {
+        font-size: 20px; /* Reduce font size for text */
+        top: -35px; /* Adjust text position */
+    }
+}
+
+/* Logo Styling */
+header a img {
+    position: absolute;
+    top: 10px; /* Adjust spacing from the top */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the logo horizontally */
+    height: 50px; /* Make the logo smaller */
+    width: auto;
+}
+
+/* Menu Styling */
+.menu-links {
+    display: flex; /* Arrange menu items in a row */
+    position: absolute; /* Keeps the menu positioned relative to the header */
+    top: 23px; /* moving the menu */
+    left: 20px; /* Add space from the left */
+}
+
+.menu-links ul {
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Ensure list items are aligned in a row */
+    gap: 15px; /* Add space between menu items */
+}
+
+.menu-links li {
+    margin: 0; /* No additional spacing */
+}
+
+.menu-links a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Set text color */
+    font-size: 14px; /* Adjust font size */
+    font-weight: bold;
+    padding: 5px 10px; /* Add padding around text */
+}
+
+.menu-links a:hover {
+    color: red; /*hover becomes red*/
+    transition: 0.3s
+}
+
+/* Store section */
+.store-selection {
+    text-align: center;
+    padding: 20px;
+    color: white; 
+}
+
+.store-selection h2 {
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.official-store-link {
+    display: inline-block;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.3s
+}
+
+.official-store-link:hover {
+    background: #fff;
+    color: red;
+}
+
+/* Product List */
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background-color: none;
+    border: 2px solid white;
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 550px;
+}
+
+.product figure {
+    margin: 0;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.accessories{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product figcaption {
+    padding: 10px;
+}
+
+.product figcaption a {
+    align-content: center;
+    display: inline-block;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 20px 100px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s
+}
+
+.product figcaption a:hover {
+    background: white;
+    color: red;
+}
+
+/* TOUR SECTION */
+.tour-banner{
+    background: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/Tour photo.jpg") no-repeat center center/cover;
+    background-size: cover;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tour-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Overlay */
+    z-index: 1;
+}
+
+.tour-content {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.tour-content h1 {
+    font-size: 5.5rem;
+    font-weight: bold;
+    margin: 0; 
+    line-height: 1;
+}
+
+.tour-content p {
+    font-size: 3.5rem;
+    margin: 0; 
+    line-height:1;
+}
+
+.tour-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    position: relative;
+    top: 30px;
+}
+
+.tour-button:hover {
+    background: white;
+    color: red;
+}
+
+.spacer{
+    height:10px;
+}
+
+/* Official music videos section */
+/* Center carousel */
+.carousel {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Styling the title */
+.carousel-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+    margin-top: -10px;
+}
+
+/* Flexbox to position arrows beside the video */
+.video-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Space between arrows and video */
+    width: 100%;
+    max-width: 900px; /* Adjust for responsiveness */
+}
+
+/* Video container styling */
+.video-container {
+    flex: 1; /* Allow the video to take up most of the space */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    overflow: hidden;
+    max-width: 800px; /* Max width for larger screens */
+}
+
+.video-container iframe {
+    width: 100%; /* Make the video fill the container */
+    height: 400px;
+    max-height: 80vh;
+    border: none;
+    border-radius: 8px; 
+}
+
+/* Styling for buttons (arrows) */
+button.arrow-left,
+button.arrow-right {
+    font-size: 10rem; /*size of arrow*/
+    width: auto; 
+    height: auto;
+    background: none; 
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+/* Add hover effect for buttons */
+button.arrow-left:hover,
+button.arrow-right:hover {
+    color: red; 
+    transform: scale(1.2); /*slighty enlarges the arrow when u hover on it*/
+    transition: transform 0.3s ease; /*transition*/
+}
+
+button.arrow-left:focus,
+button.arrow-right:focus {
+    outline: none; /* Prevent the outline/focus box from appearing */
+}
+
+/*responsiveness section*/
+/* For smaller screens (tablets and below) */
+@media (max-width: 768px) {
+    .video-wrapper {
+        flex-direction: column; /* Stack arrows and video vertically */
+    }
+
+    button.arrow-left,
+    button.arrow-right {
+        width: 40px; /* Smaller buttons */
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .video-container {
+        max-width: 100%; /* Allow the video to fill the container */
+    }
+}
+
+/* for small screens*/
+@media (max-width: 480px) {
+    .carousel-title {
+        font-size: 1.5rem; /* Smaller font for title */
+    }
+
+    .video-wrapper {
+        gap: 0.5rem; /* Reduce space between elements */
+    }
+
+    button.arrow-left,
+    button.arrow-right {
+        width: 35px; /* Even smaller buttons */
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .video-container {
+        max-width: 100%;
+        aspect-ratio: 4 / 3; /* Adjust aspect ratio for smaller screens */
+    }
+}
+
+/* Seperator line */
+.seperator-line {
+    width: 80%;
+    height: 2px;
+    background-color: #ccc;
+    border: none;
+    margin: 2rem auto;
+}   
+
+/* Newsletter Section */
+/* Header Section Styling*/
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heading h3{
+    font-size: 2rem;
+    font-weight: bold;
+    color: white; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;    
+}
+
+.heading p .left-text{
+    text-align: left; /* Align the left text properly */
+    flex: 1; 
+    color: white;
+}
+
+.heading p .right-text{
+    text-align: right; 
+    flex: 1; 
+    color: white;
+}
+
+/*form-section styling*/
+.form-section {
+    max-width: 900px; /*line for the text*/
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: -50px;
+}
+
+/* Form Styling */
+.styled-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between input fields */
+}
+
+/* Input Group Styling */
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input-row .input-group{
+    flex: 1; 
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Input Fields and Select Styling */
+.input-group input,
+.input-group select {
+    border: none;
+    border-bottom: 2px solid #bfbfbf; /* Light gray underline */
+    font-size: 1rem;
+    padding: 8px 0;
+    outline: none;
+    background: transparent;
+    color: #696868; 
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-bottom: 2px solid #3b3b3b; /* Dark gray underline on focus */
+}
+
+/* Phone Input Styling */
+.phone-input-container {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between dropdown and input */   
+}
+
+/* Dropdown Styling */
+.phone-input select {
+    border: none;
+    border-bottom: 2px solid #bfbfbf; /* Matches input underline */
+    font-size: 1rem;
+    padding: 8px 5px;
+    background: transparent;
+    color: #696868;
+    outline: none;
+    appearance: none; /* Hides default browser dropdown arrow */
+    transition: border-color 0.3s;
+    max-width: 250px;
+}
+
+.phone-input select:focus {
+    border-bottom: 2px solid #3b3b3b;
+}
+
+/* Disclaimer Text Styling */
+.disclaimer {
+    text-align: center; /* Center-align all text inside the p tag */
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #6f6f6f; /* Muted gray color for text */
+    margin: 0 auto; /* Optional: centers the <p> element itself */
+    max-width: 100%; /* Optional: limit the width for better readability */
+}
+
+/* Submit Button Styling */
+.styled-form button {
+    background-color: transparent;
+    border: 2px solid white; 
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 40px;
+    font-weight: bold;
+}
+
+.styled-form button:hover {
+    background-color: white; 
+    color: red;
+    font-weight: bold;
+}
+
+/* Footer Section */
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .video-container {
+        gap: 10px;
+    }
+
+    .video {
+        width: 280px;
+        height: 158px;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+
+/* HISTORY PAGE CSS */
+/*header*/
+.Header {
+    position: relative;  
+    background-image: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/team photo.webp"); 
+    background-size: cover;  /* Make sure the image covers the entire section */
+    background-position: center;  
+    height: 250px;  /* Set a fixed height for the header */
+    padding-top: 40px; /* Adjust top padding to position the header content */
+    text-align: center;
+}
+
+/*style for history text*/
+.banner-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem; /* Default large font size */
+    font-weight: bold;
+    z-index: 2; 
+}
+
+/* Media Query for Small Screens (Mobile) */
+@media (max-width: 768px) {
+    /* Adjust the height of the header */
+    .Header {
+        height: 300px; /* Smaller height for mobile */
+        padding-top: 30px;
+    }
+
+    /* Make the banner text smaller and more centered */
+    .banner-title {
+        font-size: 2rem; /* Smaller text size for mobile */
+    }
+
+    /* Stack the menu links vertically on small screens */
+    .menu-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-links ul li {
+        margin: 10px 0; /* Space out the links vertically */
+    }
+
+    /* Adjust logo size for mobile if needed */
+    .Header img {
+        width: 150px; /* Adjust logo size for smaller screens */
+    }
+}
+
+/* Media Query for Extra Small Screens (Mobile portrait) */
+@media (max-width: 480px) {
+    /* Further reduce the height and font size */
+    .Header {
+        height: 250px;
+        padding-top: 20px;
+    }
+
+    .banner-title {
+        font-size: 1.5rem; /* Even smaller text size */
+    }
+
+    .Header img {
+        width: 120px; /* Further reduce logo size for smaller screens */
+    }
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.timeline-title {
+    font-size: 2.5rem;
+    color: red;
+    margin-bottom: 40px;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-item {
+    background-color: #f8f8f8;
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-year {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff6347;
+    margin-bottom: 15px;
+}
+
+.timeline-content h3 {
+    font-size: 2rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.timeline-content p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column; /* Stack the image and text vertically on smaller screens */
+        text-align: center; /* Center the text on smaller screens */
+    }
+
+    .image1 img {
+        width: 80%; /* Adjust image width for mobile */
+        margin-bottom: 20px; /* Add space between the image and text */
+    }
+
+    .image1text {
+        width: 80%; /* Adjust text section width for mobile */
+        padding-left: 0; /* Remove left padding */
+    }
+}
+
+/*MEMBERS PAGE CSS*/
+/*banner*/
+.members-header {
+    position: relative;  
+    background-image: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/team_photo_members.png"); 
+    background-size: cover;  /* Make sure the image covers the entire section */
+    background-position: center;  
+    height: 250px;  /* Set a fixed height for the header */
+    padding-top: 40px; /* Adjust top padding to position the header content */
+    text-align: center;
+}
+
+/* General container setup */
+.container {
+    display: flex;
+    height: 100vh; /* Full height of viewport */
+    box-sizing: border-box;
+}
+
+/* Equal flex for both left and right boxes */
+.left-box1, .right-box1, 
+.left-box2, .right-box2, 
+.left-box3, .right-box3, 
+.left-box4, .right-box4, 
+.left-box5, .right-box5 {
+    flex: 1; /* Ensure both boxes take up equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* Image adjustments to ensure images fit the box */
+.album-image-members {
+    width: 100%; /* Ensure images take up full width */
+    height: 100%; /* Ensure images take up full height */
+    object-fit: cover; /* Ensures images fill the box without distortion */
+    transition: opacity 0.3s ease;
+}
+
+/* Content styling to center text */
+.content-louis, .content-zayn, .content-harry, .content-liam, .content-niall {
+    text-align: center;
+}
+
+.content-louis h1, .content-zayn h1, .content-harry h1, .content-liam h1, .content-niall h1 {
+    font-size: 5rem;
+    margin-bottom: -10px;
+}
+
+.content-louis p, .content-zayn p, .content-harry p, .content-liam p, .content-niall p {
+    line-height: 1.5;
+    font-size: 2rem;
+}
+
+.content-louis .nickname-louis, 
+.content-zayn .nickname-zayn, 
+.content-harry .nickname-harry, 
+.content-liam .nickname-liam, 
+.content-niall .nickname-niall {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+/* Hover effects for images */
+.left-box1 img:hover, .right-box2 img:hover, .left-box3 img:hover, .right-box4 img:hover, .left-box5 img:hover {
+    content: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/louis image2.jpg");
+}
+
+/* Make sure images in right box fill space without distortion */
+.right-box2 img, .right-box4 img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    transition: opacity 0.3s ease;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack boxes vertically */
+    }
+    .left-box1, .right-box1, .left-box2, .right-box2, .left-box3, .right-box3, .left-box4, .right-box4, .left-box5, .right-box5 {
+        flex: none; /* Remove equal sizing */
+        width: 100%; /* Full width for each box */ 
+    }
+}
+
+/*TOURS PAGE CSS*/
+/* Section for tours */
+.tours {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.tour-header {
+    padding-top: 100px;
+}
+
+.tour-title {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Tour Dates Table */
+.tour-dates {
+    padding: 50px;
+    text-align: center;
+}
+
+.tour-dates-title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.tour-dates-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tour-dates-table th, .tour-dates-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tour-dates-table th {
+    background-color: #333;
+    color: white;
+}
+
+.tour-dates-table td button {
+    padding: 10px 15px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tour-dates-table td button:hover {
+    background-color: red;
+}
+
+/* Booking Form */
+.booking-form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form h2 {
+    margin-bottom: 20px;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.booking-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.booking-form button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.booking-form button:hover {
+    background-color: #e05338;
+}
+
+/* Thank You Section */
+#thank-you-section {
+    text-align: center;
+    padding: 50px;
+}
+
+/*ALBUMS PAGE CSS*/
+.albums-header{
+    position: relative;
+    background-image: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/team photo banner for store.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    padding-top: 40px;
+    text-align: center; 
+}
+
+.banner-title-albums{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.albums-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.albums-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.albums-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.album {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.album img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.album h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.album p {
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .albums-container {
+        flex-direction: column;
+    }
+
+    .album {
+        width: 80%;
+        margin: 0 auto 20px auto;
+    }
+}
+
+/*STORE PAGE CSS*/
+.store-header{
+    position: relative;
+    background-image: url("C:/Users/xhaka/Downloads/sem2/front end developing/assignment 1/images/team photo banner for store.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    padding-top: 40px;
+    text-align: center; 
+}
+
+.banner-store-title{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}

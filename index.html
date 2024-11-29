@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Direction</title>
+    <link href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class = "header"> 
+        <header>
+            <a href = "index.html"><img src ="C:\Users\xhaka\Downloads\sem2\front end developing\assignment 1\images\one direction logo.png"></a>
+            <div class = "menu-links">
+                <ul>
+                    <li><a href="history.html">HISTORY</a></li>
+                    <li><a href="members.html">MEMBERS</a></li>
+                    <li><a href="tours.html">TOURS</a></li>
+                    <li><a href="albums.html">RELEASES</a></li>
+                    <li><a href="store.html">STORE</a></li>
+                </ul>
+            </div>
+
+            <!--<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4gCNyS7pidfK3rKWhB3JOY?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
+
+            <span class="rectangle-box">
+                <span class ="box-text">LISTEN NOW</span>
+                STREAM / DOWNLOAD
+            </span>
+        </header>
+    </section>
+
+    <!--store section-->    
+    <section class = "store-selection">
+        <header>
+            <h2>STORE</h2>
+            <a href = "store.html" class = "official-store-link">SHOP OFFICIAL STORE</a>
+            <div id = "verticle-line"></div>
+        </header>
+        <section class = "product-list">
+            <article class = "product">
+                <figure>
+                    <img src="C:\Users\xhaka\Downloads\sem2\front end developing\assignment 1\images\vinyl.webp" alt="product-image records">
+                    <figcaption><a href="store.html">SHOP RECORDS</a></figcaption>
+                </figure>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="C:\Users\xhaka\Downloads\sem2\front end developing\assignment 1\images\1D shirt.png" alt="product-image clothes">
+                    <figcaption><a href="store.html">SHOP CLOTHES</a></figcaption>
+                </figure>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="C:\Users\xhaka\Downloads\sem2\front end developing\assignment 1\images\one_d_keychain-removebg-preview.png" alt="product-image accessories">
+                    <figcaption><a href="store.html">SHOP ACCESSORIES</a></figcaption>
+                </figure>
+            </article>
+        </section>
+    </section>
+
+    <!--tours section-->
+    <section class ="tour-banner">
+        <header class="tour-content">
+            <h1>ONE DIRECTION</h1>
+            <p>BACK IN ACTION TOUR</p>
+            <a href="tours.html" class="tour-button">INTERNATIONAL TOUR DATES</a>
+        </header>
+    </section>
+
+    <!--official music video section-->
+    <section class="carousel">
+        <h4 class="carousel-title">MUSIC VIDEOS</h4>
+        <div class="video-wrapper">
+            <button class="arrow-left" onclick="prevVideo()" aria-label="Previous Video">&#8249;</button>
+            <div class="video-container">
+                <iframe
+                    id="carousel-video"
+                    src="https://www.youtube.com/embed/eg2g6FPsdLI"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <button class="arrow-right" onclick="nextVideo()" aria-label="Next Video">&#8250;</button>
+        </div>
+    </section>
+
+    <!--separator line-->
+    <hr class = "seperator-line">
+
+    <!--newsletter section-->
+    <section class="form-section">
+        <!--heading section-->
+        <div class = "heading">
+            <h3>JOIN THE ONE DIRECTION NEWSLETTER!</h3>
+            <p>
+                <span class="left-text">Stay updated with the latest news, music, and events from One Direction.</span>
+                <span class="right-text">Sign up now!</span>
+            </p>
+        </div>
+
+        <!--form section-->
+        <form class="styled-form">
+            <!-- Email Address -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="country">Country *</label>
+                    <select id="country" required>
+                        <option value="" selected disabled>Select your country</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ca">Canada</option>
+                        <option value="au">Australia</option>
+                        <option value="in">India</option>
+                        <option value="jp">Japan</option>
+                        <option value="de">Germany</option>
+                        <option value="fr">France</option>
+                        <option value="cn">China</option>
+                        <option value="ru">Russia</option>
+                        <option value="mm">Myanmar</option>
+                        <option value="sg">Singapore</option>
+                    </select>
+                </div>
+            </div>
+        
+            <!-- Phone Number Below Centered -->
+            <div class="phone-input-container">
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <div class="phone-input">
+                        <select id="country-code" name="country-code">
+                            <option value="" disable selected>County Code</option>
+                            <option value="+1">+1 (United States)</option>
+                            <option value="+44">+44 (United Kingdom)</option>
+                            <option value="+123">+123 (Canda)</option>
+                            <option value="+91">+91 (India)</option>
+                            <option value="+61">+61 (Australia)</option>
+                            <option value="+49">+49 (Germany)</option>
+                            <option value="+33">+33 (France)</option>
+                            <option value="+86">+86 (China)</option> 
+                            <option value="+7">+7 (Russia)</option>
+                            <option value="+81">+81 (Japan)</option>
+                            <option value="+95">+95 (Myanmar)</option>
+                            <option value="+65">+65 (Singapore)</option>
+                        </select>
+                        <input type="tel" id="phone" placeholder="Enter your phone number">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <p class="disclaimer">
+                By providing this information, you are opting to receive emails from One Direction with the latest news, exclusive offers, promotions, and updates tailored to your interests. You agree to the One Direction privacy policy and terms of use. Fields marked with an asterisk (*) are required. International subscribers will receive a confirmation email to complete your subscription.
+
+                By providing your mobile number, you are opting to receive news, special offers, promotions, messages tailored to your interests, and updates related to your shopping cart from One Direction via autodialed calls and text messages to the phone number you provided. You acknowledge and agree to the One Direction privacy policy and terms of use. Consent is not a condition of purchase or required to use our services. Standard message and data rates may apply. Message frequency may vary. Reply STOP to opt out at any time.
+            </p>
+
+            <!-- Submit Button -->
+            <button type="submit">SUBMIT</button>
+        </form>
+    </section>
+
+    <!--footer section-->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="icon">Instagram</a>
+            <a href="#" aria-label="Facebook" class="icon">Facebook</a>
+            <a href="#" aria-label="Spotify" class="icon">Spotify</a>
+            <a href="#" aria-label="YouTube" class="icon">YouTube</a>
+            <a href="#" aria-label="X" class="icon">X</a>
+            <a href="#" aria-label="Pinterest" class="icon">Pinterest</a>
+        </div>
+
+        <div class="links">
+            <a href="#">Terms</a> |
+            <a href="#">Privacy</a> |
+            <a href="#">Cookie Choices</a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 One Direction. Copyright All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!--JavaScript-->
+    <script src="script.js"></script>
+</body>
+</html>
