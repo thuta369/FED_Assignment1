@@ -10,15 +10,10 @@
 <body>
     <!-- Tours Section -->
     <section class="tours">
-        <div class = "tours-header">
+        <div class="tours-header">
             <h1 class="tour-title">BACK IN ACTION</h1>
         </div>
-        <div class="tour-footer">
-            <div class="tour-box">
-                <h2 class="tour-title2">WORLD TOUR</h2>
-            </div>
-        </div>
-        
+
         <!-- Header Section -->
         <header>
             <a href="index.html"><img src="images/one direction logo.png" alt="One Direction Logo"></a>
@@ -37,42 +32,36 @@
     <!-- Tour Dates Section -->
     <section class="tour-dates">
         <h2 class="tour-dates-title">Upcoming Tour Dates</h2>
-        <table class="tour-dates-table">
-            <thead>
-                <tr>
-                    <th>City</th>
-                    <th>Date</th>
-                    <th>Venue</th>
-                    <th>Tickets</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>London, United Kingdom</td>
-                    <td>June 15, 2025</td>
-                    <td>Wembley Stadium</td>
-                    <td><button class="book-button" onclick="showBookingForm('London, United Kingdom', 'June 15, 2025')">Book Now</button></td>
-                </tr>
-                <tr>
-                    <td>New York, USA</td>
-                    <td>June 20, 2025</td>
-                    <td>Madison Square Garden</td>
-                    <td><button class="book-button" onclick="showBookingForm('New York, USA', 'June 20, 2025')">Book Now</button></td>
-                </tr>
-                <tr>
-                    <td>Los Angeles, USA</td>
-                    <td>June 25, 2025</td>
-                    <td>Hollywood Bowl</td>
-                    <td><button class="book-button" onclick="showBookingForm('Los Angeles, USA', 'June 25, 2025')">Book Now</button></td>
-                </tr>
-                <tr>
-                    <td>Tokyo, Japan</td>
-                    <td>July 1, 2025</td>
-                    <td>Tokyo Dome</td>
-                    <td><button class="book-button" onclick="showBookingForm('Tokyo, Japan', 'July 1, 2025')">Book Now</button></td>
-                </tr>
-            </tbody>
-        </table>
+        <ul class="tour-list">
+            <li class="tour-item">
+                <div class="tour-box" onclick="openBookingForm('Zayed Sports City Stadium, Abu Dhabi', 'January 9, 2025')">
+                    <div class="date">January 9, 2025</div>
+                    <div class="location">Zayed Sports City Stadium, Abu Dhabi</div>
+                    <button class="book-button">Book Now</button>
+                </div>
+            </li>
+            <li class="tour-item">
+                <div class="tour-box" onclick="openBookingForm('London, United Kingdom', 'June 15, 2025')">
+                    <div class="date">June 15, 2025</div>
+                    <div class="location">London, United Kingdom</div>
+                    <button class="book-button">Book Now</button>
+                </div>
+            </li>
+            <li class="tour-item">
+                <div class="tour-box" onclick="openBookingForm('New York, USA', 'June 20, 2025')">
+                    <div class="date">June 20, 2025</div>
+                    <div class="location">New York, USA</div>
+                    <button class="book-button">Book Now</button>
+                </div>
+            </li>
+            <li class="tour-item">
+                <div class="tour-box" onclick="openBookingForm('Tokyo, Japan', 'July 1, 2025')">
+                    <div class="date">July 1, 2025</div>
+                    <div class="location">Tokyo, Japan</div>
+                    <button class="book-button">Book Now</button>
+                </div>
+            </li>
+        </ul>
     </section>
 
     <!-- Booking Form Section -->
@@ -81,23 +70,23 @@
             <h2>Book Your Tickets</h2>
             <form id="booking-form" onsubmit="submitBooking(event)">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required><br>
-
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                
                 <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required><br>
-
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                
                 <label for="city">City:</label>
-                <input type="text" id="city" name="city" readonly><br>
-
+                <input type="text" id="city" name="city" readonly placeholder="City (e.g. London)">
+                
                 <label for="date">Tour Date:</label>
-                <input type="text" id="date" name="date" readonly><br>
-
+                <input type="text" id="date" name="date" readonly placeholder="Tour date (e.g. January 9, 2025)">
+                
                 <label for="tickets">Number of Tickets:</label>
-                <input type="number" id="tickets" name="tickets" min="1" required><br>
-
+                <input type="number" id="tickets" name="tickets" min="1" required placeholder="Number of tickets">
+                
                 <button type="submit">Submit Booking</button>
             </form>
-            <button onclick="closeBookingForm()">Close</button>
+            <button class="close-btn" onclick="closeBookingForm()">X</button>
         </div>
     </section>
 
@@ -128,7 +117,8 @@
         </div>
     </footer>
 
-    <!--JavaScript-->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
+

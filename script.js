@@ -30,8 +30,8 @@ const videoLinks = [
   }
 //==============================================================================================================================================//
 //==============================================================================================================================================//
-//NEWSLETTER JS//
-// Select form and elements
+// ======================== Newsletter Form ========================
+// Select form and elements for the newsletter subscription
 const form = document.getElementById('newsletter-form');
 const emailInput = document.getElementById('email');
 const phoneInput = document.getElementById('phone');
@@ -39,7 +39,7 @@ const formMessage = document.getElementById('form-message');
 
 // Add event listener for form submission
 form.addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the form from submitting normally
 
     // Get input values
     const email = emailInput.value.trim();
@@ -48,19 +48,19 @@ form.addEventListener('submit', function (e) {
     // Validate inputs
     if (validateEmail(email) && validatePhone(phone)) {
         formMessage.textContent = 'Thank you for subscribing to the One Direction Newsletter!';
-        formMessage.className = 'success';
-        formMessage.classList.remove('hidden');
+        formMessage.className = 'success';  // Success message style
+        formMessage.classList.remove('hidden');  // Show message
 
-        // Reset form
+        // Reset form fields after successful submission
         form.reset();
     } else {
         formMessage.textContent = 'Please enter valid email and phone number.';
-        formMessage.className = 'error';
-        formMessage.classList.remove('hidden');
+        formMessage.className = 'error';  // Error message style
+        formMessage.classList.remove('hidden');  // Show message
     }
 });
 
-// Validate email
+// Validate email with regex
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -71,22 +71,31 @@ function validatePhone(phone) {
     const phoneRegex = /^[0-9]{10,15}$/;
     return phoneRegex.test(phone);
 }
-//==============================================================================================================================================//
-//==============================================================================================================================================//
-//TOURS JS//
-// Show the booking form with city and date pre-filled
-function showBookingForm(city, date) {
-  document.getElementById("city").value = city;
-  document.getElementById("date").value = date;
-  document.getElementById("booking-form-container").style.display = "flex";
+
+// ======================== Tour Booking Form ========================
+
+// Open the booking form with selected city and date
+function openBookingForm(city, date) {
+  // Show the booking form container
+  const bookingFormContainer = document.getElementById('booking-form-container');
+  const cityInput = document.getElementById('city');
+  const dateInput = document.getElementById('date');
+
+  // Make the booking form visible
+  bookingFormContainer.style.display = 'block';
+  
+  // Set the values for city and date fields in the form
+  cityInput.value = city;
+  dateInput.value = date;
 }
 
 // Close the booking form
 function closeBookingForm() {
-  document.getElementById("booking-form-container").style.display = "none";
+  // Hide the booking form container
+  document.getElementById('booking-form-container').style.display = 'none';
 }
 
-// Handle the form submission
+// Submit the booking form
 function submitBooking(event) {
   event.preventDefault();
   
@@ -94,3 +103,5 @@ function submitBooking(event) {
   document.getElementById("booking-form-container").style.display = "none";
   document.getElementById("thank-you-section").style.display = "block";
 }
+
+
