@@ -1,6 +1,14 @@
 //MAIN PAGE -INDEX.HTML//
 //==============================================================================================================================================//
 //==============================================================================================================================================//
+//hamburger method//
+// Function to toggle the menu on small screens
+function toggleMenu() {
+  const menu = document.querySelector('.menu-links');
+  const hamburger = document.querySelector('.hamburger');
+  menu.classList.toggle('show'); // Show or hide the menu
+  hamburger.classList.toggle('active'); // Change hamburger icon to cross
+}
 //VIDEOS SECTION JS//
 // Select the video container and the buttons
 // List of YouTube video URLs 
@@ -186,5 +194,6 @@ function confirmCheckout() {
 
   closeCheckout(); // Close the modal after confirming checkout
 }
+
 
 

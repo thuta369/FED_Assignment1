@@ -62,44 +62,51 @@ body {
 }
 
 /*responsiveness*/
-@media screen and (max-width: 768px) {
-    .header {
-        height: auto;
-        padding: 30px 0; 
-        background-size: contain;
-    }
-
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* For tablets */
     .rectangle-box {
-        width: 80%;  
-        right: 0; 
-        font-size: 24px;  
-        top: 50%; 
-        transform: translateY(-50%);
+        width: 80%; /* Adjust width for smaller screens */
+        right: 10%; /* Keep the box centered */
+        font-size: 24px; /* Reduce font size on smaller screens */
     }
 
     .box-text {
-        font-size: 24px; 
-        top: -40px; 
+        font-size: 24px; /* Adjust the font size for the text */
     }
 }
 
-/*for mobile devices (max-width: 480px) */
-@media screen and (max-width: 480px) {
+@media (max-width: 768px) {
+    /* For smaller tablets and larger phones */
     .header {
-        height: auto;
-        padding: 20px 0;
+        height: 70vh; /* Reduce header height */
     }
 
     .rectangle-box {
-        width: 90%;  /* Further reduce the width */
-        right: 0;
-        font-size: 20px;  /* Even smaller font size */
-        top: 50%;  /* Keep it centered vertically */
+        width: 90%; /* Adjust box width */
+        right: 5%; /* Center the box */
+        font-size: 20px; /* Adjust font size */
     }
 
     .box-text {
-        font-size: 20px; /* Reduce font size for text */
-        top: -35px; /* Adjust text position */
+        font-size: 20px; /* Adjust text font size */
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile devices */
+    .header {
+        height: 60vh; /* Reduce header height further */
+    }
+
+    .rectangle-box {
+        width: 90%; /* Box takes up more width */
+        right: 5%; /* Keep it centered */
+        font-size: 18px; /* Smaller font for mobile */
+    }
+
+    .box-text {
+        font-size: 18px; /* Smaller text size on mobile */
     }
 }
 
@@ -144,6 +151,73 @@ header a img {
 .menu-links a:hover {
     color: red; /*hover becomes red*/
     transition: 0.3s
+}
+
+/* Hamburger Menu Icon (visible on smaller screens) */
+.hamburger {
+    display: none; /* Hide by default */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Show the hamburger icon on small screens */
+@media (max-width: 768px) {
+    .menu-links {
+        display: none; /* Hide menu items by default */
+        position: absolute; /* Position the menu on top of the page */
+        top: 60px;
+        left: 20px;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for mobile menu */
+        padding: 20px;
+        border-radius: 8px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-links ul {
+        flex-direction: column; /* Stack menu items vertically */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon on mobile */
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hamburger div {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+    }
+
+    .menu-links.show {
+        display: flex; /* Show menu items when clicked */
+    }
+}
+
+/* Hamburger Icon Active State (when menu is open) */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg); /* Top bar becomes part of a cross */
+    position: relative;
+    top: 7px;
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg); /* Bottom bar becomes part of a cross */
+    position: relative;
+    top: -7px;
 }
 
 /* Store section */
@@ -235,6 +309,73 @@ header a img {
     color: red;
 }
 
+/* Responsive Design */
+@media (max-width: 1200px) {
+    /* For large screens, like tablets */
+    .product-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product {
+        width: 45%; /* Adjust product width */
+        margin: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    /* For tablets */
+    .store-selection h2 {
+        font-size: 1.8rem; /* Smaller text size */
+    }
+
+    .product-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product {
+        width: 48%; /* Adjust product width to fit two items per row */
+        margin: 10px;
+    }
+
+    .product figcaption a {
+        font-size: 18px; /* Adjust button font size */
+        padding: 15px 50px; /* Smaller padding */
+    }
+}
+
+@media (max-width: 600px) {
+    /* For smaller screens, like mobile */
+    .store-selection h2 {
+        font-size: 1.5rem; /* Even smaller text size */
+    }
+
+    .official-store-link {
+        font-size: 1.5rem; /* Adjust button text size */
+        padding: 8px 16px;
+    }
+
+    .product-list {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px;
+    }
+
+    .product {
+        width: 100%; /* Full width for mobile */
+        margin-bottom: 20px; /* Space between products */
+    }
+
+    .product figcaption a {
+        font-size: 16px; /* Adjust button font size */
+        padding: 15px 60px; /* Adjust padding for smaller screens */
+    }
+
+    .accessories {
+        flex-direction: column; /* Stack the accessories vertically */
+        gap: 10px; /* Adjust the gap between accessories */
+    }
+}
 
 /* TOUR SECTION */
 .tour-banner{
@@ -846,14 +987,51 @@ footer a:hover {
     transition: opacity 0.3s ease;
 }
 
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack boxes vertically */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* For tablets */
+    .rectangle-box {
+        width: 80%; /* Adjust width for smaller screens */
+        right: 10%; /* Keep the box centered */
+        font-size: 24px; /* Reduce font size on smaller screens */
     }
-    .left-box1, .right-box1, .left-box2, .right-box2, .left-box3, .right-box3, .left-box4, .right-box4, .left-box5, .right-box5 {
-        flex: none; /* Remove equal sizing */
-        width: 100%; /* Full width for each box */ 
+
+    .box-text {
+        font-size: 24px; /* Adjust the font size for the text */
+    }
+}
+
+@media (max-width: 768px) {
+    /* For smaller tablets and larger phones */
+    .header {
+        height: 70vh; /* Reduce header height */
+    }
+
+    .rectangle-box {
+        width: 90%; /* Adjust box width */
+        right: 5%; /* Center the box */
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .box-text {
+        font-size: 20px; /* Adjust text font size */
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile devices */
+    .header {
+        height: 60vh; /* Reduce header height further */
+    }
+
+    .rectangle-box {
+        width: 90%; /* Box takes up more width */
+        right: 5%; /* Keep it centered */
+        font-size: 18px; /* Smaller font for mobile */
+    }
+
+    .box-text {
+        font-size: 18px; /* Smaller text size on mobile */
     }
 }
 
@@ -1437,50 +1615,76 @@ body.popup-active {
     background-color: #c82333;
   }
   
-  /* Responsive Design */
-  @media (max-width: 1200px) {
+ /* Responsive Design */
+@media (max-width: 1024px) {
+    .banner-store-title {
+        font-size: 2.5rem; /* Adjust banner title font size for tablets */
+    }
+
     .store-container {
-      grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Two items per row on tablets */
     }
-  }
-  
-  @media (max-width: 900px) {
-    .store-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .store-container {
-      grid-template-columns: 1fr;
-      padding: 10px;
-    }
-  
-    .checkout-content {
-      width: 90%;
-    }
-  
+
     .store-item img {
-      height: 150px; /* Adjust image size for smaller screens */
+        height: 250px; /* Adjust image size */
     }
-  
+
     .store-item h3 {
-      font-size: 1.1rem; /* Adjust font size for smaller screens */
+        font-size: 1.5rem; /* Adjust heading font size */
     }
-  
-    .store-item p {
-      font-size: 0.9rem; /* Adjust font size for smaller screens */
+
+    .store-item button {
+        padding: 8px 15px; /* Adjust button size */
     }
-  }
-  
-  /* For modal, add some space for small screens */
-  @media (max-width: 600px) {
-    .checkout-content {
-      width: 80%;
-      padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .store-header {
+        height: 200px; /* Reduce header height on mobile */
     }
-    .checkout-content input {
-      width: 80%; /* Adjust input width for smaller screens */
+
+    .banner-store-title {
+        font-size: 2rem; /* Smaller title font size */
     }
-  }
+
+    .store-container {
+        grid-template-columns: 1fr; /* Stack items vertically on small screens */
+        padding: 10px; /* Reduce padding */
+        margin: 10px auto; /* Adjust container margin */
+    }
+
+    .store-item img {
+        height: 200px; /* Reduce image height */
+    }
+
+    .store-item h3 {
+        font-size: 1.2rem; /* Adjust heading size */
+    }
+
+    .store-item button {
+        padding: 8px 15px; /* Adjust button size */
+    }
+}
+
+@media (max-width: 480px) {
+    .store-header {
+        height: 180px; /* Further reduce header height */
+    }
+
+    .banner-store-title {
+        font-size: 1.5rem; /* Adjust title font size */
+    }
+
+    .store-item img {
+        height: 150px; /* Further reduce image height */
+    }
+
+    .store-item h3 {
+        font-size: 1.2rem; /* Adjust heading size for mobile */
+    }
+
+    .store-item button {
+        padding: 6px 12px; /* Smaller buttons on mobile */
+    }
+}
 
