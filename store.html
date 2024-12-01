@@ -24,41 +24,175 @@
         </header>
     </section>
 
-    <main>
-        <!-- Store Section -->
-        <section class="store-section">
-            <h2>Shop Official Merchandise</h2>
-            <div class="product-grid">
-                <div class="product">
-                    <img src="images/shirt.jpg" alt="One Direction T-shirt">
-                    <h3>One Direction T-shirt</h3>
-                    <p class="price">$25.00</p>
-                    <button class="add-to-cart" data-name="One Direction T-shirt" data-price="25">Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="images/hat.jpg" alt="One Direction Hat">
-                    <h3>One Direction Hat</h3>
-                    <p class="price">$15.00</p>
-                    <button class="add-to-cart" data-name="One Direction Hat" data-price="15">Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="images/poster.jpg" alt="One Direction Poster">
-                    <h3>One Direction Poster</h3>
-                    <p class="price">$10.00</p>
-                    <button class="add-to-cart" data-name="One Direction Poster" data-price="10">Add to Cart</button>
-                </div>
-            </div>
-        </section>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Store Page</title>
+      <link rel="stylesheet" href="styles.css">
+    </head>
 
-        <!-- Cart Section -->
-        <section id="cart">
-            <h2>Your Cart</h2>
-            <ul id="cart-list"></ul>
-            <p id="total">Total: $0.00</p>
-        </section>
-    </main>
+    <!--store items-->
+    <section class="store-container">
+        <!--item 1-->
+        <div class="store-item" data-name="FOUR Deluxe Vinyl" data-price="50">
+          <img src="images/vinyl_store.png" alt="FOUR Deluxe Vinyl">
+          <h3>FOUR Deluxe Vinyl</h3>
+          <p>Price: $50</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 2-->
+        <div class="store-item" data-name="Where We are Tour 2014 Tee" data-price="20">
+          <img src="images/blackshirt.png" alt="Midnight Memories 'Where We are Tour 2014'">
+          <h3>"Where We are Tour 2014" Tee</h3>
+          <p>Price: $20</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 3-->
+        <div class="store-item" data-name="'Up All Night' Hoodie" data-price="70">
+          <img src="images/hoodie.png" alt="Hoodie">
+          <h3>'Up All Night' Hoodie</h3>
+          <p>Price: $70</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 4-->
+        <div class="store-item" data-name="Love Shaped Keychain" data-price="5">
+          <img src="images/keychain.png" alt="Love Shaped Keycahin">
+          <h3>Love Shaped Keychain</h3>
+          <p>Price: $5</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 5-->
+        <div class="store-item" data-name="'Story Of My Life' Tee" data-price="20">
+          <img src="images/greenshirt.png" alt="'Story Of My Life' Tee">
+          <h3>"Story Of My Life" Tee</h3>
+          <p>Price: $20</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 6-->
+        <div class="store-item" data-name="'Upp All Night' Vinyl" data-price="60">
+          <img src="images/vinyl_upallnight.png" alt="Vinyl">
+          <h3>"Up All Night" Vinyl</h3>
+          <p>Price: $60</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 7-->
+        <div class="store-item" data-name="Lanyard Keychain" data-price="8">
+          <img src="images/keychain2.png" alt="Keychain">
+          <h3>Lanyard Keychain</h3>
+          <p>Price: $8</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 8-->
+        <div class="store-item" data-name="1D Forever Tee" data-price="40">
+          <img src="images/1Dforevertee.png" alt="1D Forever Tee">
+          <h3>1D Forever Tee</h3>
+          <p>Price: $40</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 9-->
+        <div class="store-item" data-name="Eternal One Direction Hoodie" data-price="190">
+          <img src="images/onedhoodiewhite.png" alt="Eternal One Direction Hoodie">
+          <h3>Eternal One Direction Hoodie</h3>
+          <p>Price: $190</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 10-->
+        <div class="store-item" data-name="'Made In The A.M.' Vinyl Record" data-price="40">
+          <img src="images/vinyl_madeintheam.png" alt="'Made In The A.M.' Vinyl Record">
+          <h3>'Made In The A.M.' Vinyl Record</h3>
+          <p>Price: $40</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 11-->
+        <div class="store-item" data-name="'Take Me Home' Vinyl" data-price="40">
+          <img src="images/takemehome_vinyl.png" alt="'Take Me Home' Vinyl">
+          <h3>'Take Me Home' Vinyl</h3>
+          <p>Price: $40</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 12-->
+        <div class="store-item" data-name="1D Forever Keychain" data-price="8">
+          <img src="images/1Dforever-keychain.png" alt="1D Forever Keychain">
+          <h3>1D Forever Keychain</h3>
+          <p>Price: $8</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 13-->
+        <div class="store-item" data-name="1D Band Tee" data-price="40">
+          <img src="images/bandshirt.png" alt="Band Shirt">
+          <h3>1 Direction Band Tee</h3>
+          <p>Price: $40</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 14-->
+        <div class="store-item" data-name="One Direction Pillow" data-price="50">
+          <img src="images/pillow.png" alt="Pillow">
+          <h3>One Direction Pillow</h3>
+          <p>Price: $50</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+
+        <!--item 15-->
+        <div class="store-item" data-name="'We Choose One' hoodie" data-price="150">
+          <img src="images/wechooseone.png" alt="'We Choose One' hoodie">
+          <h3>'We Choose One' Hoodie</h3>
+          <p>Price: $150</p>
+          <button onclick="openCheckout(this)">Buy Now</button>
+        </div>
+    </section>
+
+    <!-- Checkout Pop-up (Modal) -->
+    <section id="checkout-modal" class="checkout-modal">
+        <div class="checkout-content">
+          <h2>Checkout</h2>
+          <p id="checkout-item-name"></p>
+          <p id="checkout-item-price"></p>
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" value="1" min="1" step="1">
+          <div>
+            <button onclick="confirmCheckout()">Confirm Checkout</button>
+            <button onclick="closeCheckout()">Cancel</button>
+          </div>
+        </div>
+    </section>
+
+    <!--footer section-->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="icon">Instagram</a>
+            <a href="#" aria-label="Facebook" class="icon">Facebook</a>
+            <a href="#" aria-label="Spotify" class="icon">Spotify</a>
+            <a href="#" aria-label="YouTube" class="icon">YouTube</a>
+            <a href="#" aria-label="X" class="icon">X</a>
+            <a href="#" aria-label="Pinterest" class="icon">Pinterest</a>
+        </div>
+
+        <div class="links">
+            <a href="#">Terms</a> |
+            <a href="#">Privacy</a> |
+            <a href="#">Cookie Choices</a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 One Direction. Copyright All Rights Reserved</p>
+        </div>
+    </footer>
     
-    <!--store-->
+    <!--javascript-->
     <script src="script.js"></script>
 </body>
 </html>

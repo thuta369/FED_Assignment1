@@ -73,102 +73,45 @@ function validatePhone(phone) {
 }
 
 // ======================== Tour Booking Form ========================
+// Open the booking form and pre-fill the information
+function openBookingForm(date, location) {
+  const bookingFormContainer = document.getElementById("booking-form-container");
+  const cityInput = document.getElementById("city");
+  const dateInput = document.getElementById("date");
 
-// Open the booking form with selected city and date
-function openBookingForm(city, date) {
-  // Show the booking form container
-  const bookingFormContainer = document.getElementById('booking-form-container');
-  const cityInput = document.getElementById('city');
-  const dateInput = document.getElementById('date');
-
-  // Make the booking form visible
-  bookingFormContainer.style.display = 'block';
-  
-  // Set the values for city and date fields in the form
-  cityInput.value = city;
+  // Set the city and date in the form
+  cityInput.value = location;
   dateInput.value = date;
+
+  // Show the booking form
+  bookingFormContainer.style.display = "flex";
 }
 
 // Close the booking form
 function closeBookingForm() {
-  // Hide the booking form container
-  document.getElementById('booking-form-container').style.display = 'none';
+  const bookingFormContainer = document.getElementById("booking-form-container");
+  bookingFormContainer.style.display = "none";
 }
 
-// Submit the booking form
+// Handle form submission (optional example, you can add actual logic)
 function submitBooking(event) {
   event.preventDefault();
-  
-  // Hide the booking form and show the thank you message
-  document.getElementById("booking-form-container").style.display = "none";
-  document.getElementById("thank-you-section").style.display = "block";
+
+  // Get form data (you can send it to the server or handle it as needed)
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const city = document.getElementById("city").value;
+  const date = document.getElementById("date").value;
+  const tickets = document.getElementById("tickets").value;
+
+  console.log("Booking submitted:", { name, email, city, date, tickets });
+
+  // Optionally, you can show a confirmation or reset the form
+  alert("Your booking has been submitted!");
+  closeBookingForm(); // Close the form after submission
 }
 
-// Shopping Cart Logic
-let cart = [];
-let total = 0;
-
-// Add item to the cart
-function addToCart(productName, productPrice) {
-    // Add product to cart array
-    cart.push({ name: productName, price: productPrice });
-
-    // Update total
-    total += productPrice;
-
-    // Render cart
-    renderCart();
-}
-
-// Render cart contents
-function renderCart() {
-    const cartList = document.getElementById("cart-list");
-    const totalElement = document.getElementById("total");
-
-    // Clear existing cart items
-    cartList.innerHTML = "";
-
-    // Add items to the cart
-    cart.forEach((item, index) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-
-        // Remove button for each item
-        const removeButton = document.createElement("button");
-        removeButton.textContent = "Remove";
-        removeButton.classList.add("remove-button");
-        removeButton.onclick = () => removeFromCart(index);
-
-        listItem.appendChild(removeButton);
-        cartList.appendChild(listItem);
-    });
-
-    // Update total
-    totalElement.textContent = `Total: $${total.toFixed(2)}`;
-}
-
-// Remove item from the cart
-function removeFromCart(index) {
-    // Update total
-    total -= cart[index].price;
-
-    // Remove item from cart array
-    cart.splice(index, 1);
-
-    // Render cart again
-    renderCart();
-}
-
-// Initialize event listeners for Add to Cart buttons
-document.querySelectorAll(".add-to-cart").forEach((button) => {
-    button.addEventListener("click", (e) => {
-        const productName = e.target.getAttribute("data-name");
-        const productPrice = parseFloat(e.target.getAttribute("data-price"));
-        addToCart(productName, productPrice);
-    });
-});
-
-//album
+// ======================== Album ========================
 // Function to display the album popup with dynamic content
 function showAlbumDetails(title, year, imageSrc, tracklist) {
   // Get the popup elements
@@ -208,5 +151,40 @@ window.addEventListener("click", (event) => {
       closePopup();
   }
 });
+
+// ========================Store========================
+// Function to open the checkout modal
+function openCheckout(button) {
+  const item = button.parentElement;
+  const name = item.getAttribute("data-name");
+  const price = item.getAttribute("data-price");
+
+  // Update the modal with item details
+  document.getElementById("checkout-item-name").textContent = `Item: ${name}`;
+  document.getElementById("checkout-item-price").textContent = `Price: $${price}`;
+
+  // Show the checkout modal
+  document.getElementById("checkout-modal").style.display = "flex";
+}
+
+// Function to close the checkout modal
+function closeCheckout() {
+  document.getElementById("checkout-modal").style.display = "none";
+}
+
+// Function to confirm the checkout
+function confirmCheckout() {
+  const quantity = document.getElementById("quantity").value;
+  const itemName = document.getElementById("checkout-item-name").textContent.split(": ")[1];
+  const itemPrice = parseFloat(document.getElementById("checkout-item-price").textContent.split(": $")[1]);
+
+  const totalPrice = itemPrice * quantity;
+
+  alert(`You are purchasing ${quantity} x ${itemName} for a total of $${totalPrice.toFixed(2)}.`);
+
+  // Optionally: You can add functionality to process the payment here.
+
+  closeCheckout(); // Close the modal after confirming checkout
+}
 
 

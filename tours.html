@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Tours Section -->
+    <!-- Tours header -->
     <section class="tours">
         <div class="tours-header">
             <h1 class="tour-title">BACK IN ACTION</h1>
@@ -16,8 +16,10 @@
 
         <!-- Header Section -->
         <header>
-            <a href="index.html"><img src="images/one direction logo.png" alt="One Direction Logo"></a>
-            <div class="menu-links">
+            <a href="index.html">
+                <img src="images/one direction logo.png" alt="One Direction Logo">
+            </a>
+            <nav class="menu-links">
                 <ul>
                     <li><a href="history.html">HISTORY</a></li>
                     <li><a href="members.html">MEMBERS</a></li>
@@ -25,43 +27,151 @@
                     <li><a href="albums.html">RELEASES</a></li>
                     <li><a href="store.html">STORE</a></li>
                 </ul>
-            </div>
+            </nav>
         </header>
     </section>
 
-    <!-- Tour Dates Section -->
-    <section class="tour-dates">
-        <h2 class="tour-dates-title">Upcoming Tour Dates</h2>
-        <ul class="tour-list">
-            <li class="tour-item">
-                <div class="tour-box" onclick="openBookingForm('Zayed Sports City Stadium, Abu Dhabi', 'January 9, 2025')">
-                    <div class="date">January 9, 2025</div>
-                    <div class="location">Zayed Sports City Stadium, Abu Dhabi</div>
-                    <button class="book-button">Book Now</button>
+    <!-- Tours Section -->
+    <section class="container">
+        <div id="tour-list">
+            <div id="tour-list">
+                <div class="tour-item">
+                    <!-- Date -->
+                    <div class="date">
+                        <span class="month-day">January 10</span>
+                        <span class="year">2025</span>
+                    </div>
+                    <!-- Location -->
+                    <div class="location">
+                        <span class="city">London, UK</span>
+                        <span class="place">Wembley Stadium</span>
+                    </div>
+                    <!-- Booking Button -->
+                    <div class="book-btn">
+                        <button onclick="openBookingForm('January 10 2025', 'London, UK - Wembley Stadium')">Book Now</button>
+                    </div>
                 </div>
-            </li>
-            <li class="tour-item">
-                <div class="tour-box" onclick="openBookingForm('London, United Kingdom', 'June 15, 2025')">
-                    <div class="date">June 15, 2025</div>
-                    <div class="location">London, United Kingdom</div>
-                    <button class="book-button">Book Now</button>
+            </div>
+
+            <div class="tour-item">
+                <!-- Date -->
+                <div class="date">
+                    <span class="month-day">January 13</span>
+                    <span class="year">2025</span>
                 </div>
-            </li>
-            <li class="tour-item">
-                <div class="tour-box" onclick="openBookingForm('New York, USA', 'June 20, 2025')">
-                    <div class="date">June 20, 2025</div>
-                    <div class="location">New York, USA</div>
-                    <button class="book-button">Book Now</button>
+                <!-- Location -->
+                <div class="location">
+                    <span class="city">Los Angeles, USA </span>
+                    <span class="place">Hollywood Bowl</span>
                 </div>
-            </li>
-            <li class="tour-item">
-                <div class="tour-box" onclick="openBookingForm('Tokyo, Japan', 'July 1, 2025')">
-                    <div class="date">July 1, 2025</div>
-                    <div class="location">Tokyo, Japan</div>
-                    <button class="book-button">Book Now</button>
+                <!-- Booking Button -->
+                <div class="book-btn">
+                    <button onclick="openBookingForm('January 13 2025', 'Los Angeles, USA - Hollywood Bowl')">Book Now</button>
                 </div>
-            </li>
-        </ul>
+            </div>
+
+            <div class="tour-item">
+                <!-- Date -->
+                <div class="date">
+                    <span class="month-day">January 15</span>
+                    <span class="year">2025</span>
+                </div>
+                <!-- Location -->
+                <div class="location">
+                    <span class="city">New York City, USA</span>
+                    <span class="place">Madison Square Garden</span>
+                </div>
+                <!-- Booking Button -->
+                <div class="book-btn">
+                    <button onclick="openBookingForm('January 15 2025', 'New York City, USA - Madison Square Garden')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="tour-item">
+                <!-- Date -->
+                <div class="date">
+                    <span class="month-day">January 18</span>
+                    <span class="year">2025</span>
+                </div>
+                <!-- Location -->
+                <div class="location">
+                    <span class="city">Paris, France</span>
+                    <span class="place">Stade de France</span>
+                </div>
+                <!-- Booking Button -->
+                <div class="book-btn">
+                    <button onclick="openBookingForm('2024-12-01', 'London, UK')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="tour-item">
+                <!-- Date -->
+                <div class="date">
+                    <span class="month-day">February 1</span>
+                    <span class="year">2025</span>
+                </div>
+                <!-- Location -->
+                <div class="location">
+                    <span class="city">Sydney, Australia</span>
+                    <span class="place">Sydney Opera House</span>
+                </div>
+                <!-- Booking Button -->
+                <div class="book-btn">
+                    <button onclick="openBookingForm('2024-12-01', 'London, UK')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="tour-item">
+                <!-- Date -->
+                <div class="date">
+                    <span class="month-day">February 4</span>
+                    <span class="year">2025</span>
+                </div>
+                <!-- Location -->
+                <div class="location">
+                    <span class="city">Tokyo, Japan</span>
+                    <span class="place">Tokyo Dome</span>
+                </div>
+                <!-- Booking Button -->
+                <div class="book-btn">
+                    <button onclick="openBookingForm('2024-12-01', 'London, UK')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="tour-item">
+                <!-- Date -->
+                <div class="date">
+                    <span class="month-day">February 7</span>
+                    <span class="year">2025</span>
+                </div>
+                <!-- Location -->
+                <div class="location">
+                    <span class="city">Seoul, South Korea</span>
+                    <span class="place">Olympic Stadium</span>
+                </div>
+                <!-- Booking Button -->
+                <div class="book-btn">
+                    <button onclick="openBookingForm('2024-12-01', 'London, UK')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="tour-item">
+                <!-- Date -->
+                <div class="date">
+                    <span class="month-day">February 10</span>
+                    <span class="year">2025</span>
+                </div>
+                <!-- Location -->
+                <div class="location">
+                    <span class="city">Singapore</span>
+                    <span class="place">National Stadium</span>
+                </div>
+                <!-- Booking Button -->
+                <div class="book-btn">
+                    <button onclick="openBookingForm('2024-12-01', 'London, UK')">Book Now</button>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Booking Form Section -->
@@ -70,32 +180,24 @@
             <h2>Book Your Tickets</h2>
             <form id="booking-form" onsubmit="submitBooking(event)">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                
+                <input type="text" id="name" name="name" required><br>
                 <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                
+                <input type="email" id="email" name="email" required><br>
                 <label for="city">City:</label>
-                <input type="text" id="city" name="city" readonly placeholder="City (e.g. London)">
-                
+                <input type="text" id="city" name="city" readonly><br>
                 <label for="date">Tour Date:</label>
-                <input type="text" id="date" name="date" readonly placeholder="Tour date (e.g. January 9, 2025)">
-                
+                <input type="text" id="date" name="date" readonly><br>
                 <label for="tickets">Number of Tickets:</label>
-                <input type="number" id="tickets" name="tickets" min="1" required placeholder="Number of tickets">
-                
+                <input type="number" id="tickets" name="tickets" min="1" required><br>
                 <button type="submit">Submit Booking</button>
             </form>
-            <button class="close-btn" onclick="closeBookingForm()">X</button>
+            <button onclick="closeBookingForm()">Close</button>
         </div>
     </section>
-
-    <!-- Thank You Section -->
-    <section id="thank-you-section" style="display: none;">
-        <h2>Thank You for Your Booking!</h2>
-        <p>We'll send a confirmation email soon.</p>
-    </section>
-
+     
+    <!--space-->
+    <section class="space"></section>
+    
     <!-- Footer Section -->
     <footer class="footer">
         <div class="social-icons">
@@ -106,14 +208,13 @@
             <a href="#" aria-label="X" class="icon">X</a>
             <a href="#" aria-label="Pinterest" class="icon">Pinterest</a>
         </div>
-
         <div class="links">
             <a href="#">Terms</a> |
             <a href="#">Privacy</a> |
             <a href="#">Cookie Choices</a>
         </div>
         <div class="copyright">
-            <p>&copy; 2024 One Direction. Copyright All Rights Reserved</p>
+            <p>&copy; 2024 One Direction. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -121,4 +222,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
