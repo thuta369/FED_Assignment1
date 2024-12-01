@@ -13,9 +13,9 @@ function toggleMenu() {
 // Select the video container and the buttons
 // List of YouTube video URLs 
 const videoLinks = [
-    "https://www.youtube.com/embed/eg2g6FPsdLI",
+    "https://www.youtube.com/embed/7bY256ed42k",  //firstvideo
     "https://www.youtube.com/embed/oe70Uhjc_F4",
-    "https://www.youtube.com/embed/VIDEO_ID_3" 
+    "https://www.youtube.com/embed/NmbeyEbP_fI" 
   ];
   
   let currentVideoIndex = 0;
