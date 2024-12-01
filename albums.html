@@ -10,9 +10,9 @@
 <body>
     <!-- Header Section -->
     <section class="albums-header">
-        <h1 class="banner-title-albums">THE COLLECTION</h1>
+        <h1 class="banner-title-albums">ALL RELEASES</h1>
         <header>
-            <a href="index.html"><img src="images\one direction logo.png" alt="One Direction Logo"></a>
+            <a href="index.html"><img src="images/one direction logo.png" alt="One Direction Logo"></a>
             <div class="menu-links">
                 <ul>
                     <li><a href="history.html">HISTORY</a></li>
@@ -27,43 +27,67 @@
 
     <!-- Albums Section -->
     <section class="albums-section">
-        <h2>One Direction Albums</h2>
         <div class="albums-container">
             <!-- Album 1 -->
-            <div class="album">
-                <img src="album1-cover.jpg" alt="Up All Night">
+            <div class="album" onclick="showAlbumDetails(
+                'Up All Night',
+                'November 2011',
+                'images/up_all_night.jpeg',
+                ['What Makes You Beautiful', 'Gotta Be You', 'One Thing', 'More Than This', 'Up All Night']
+            )">
+                <img src="images/up_all_night.jpeg" alt="Up All Night">
                 <h3>Up All Night</h3>
                 <p>Released: November 2011</p>
                 <p>Featuring hits like "What Makes You Beautiful", this debut album introduced the world to One Direction.</p>
             </div>
 
             <!-- Album 2 -->
-            <div class="album">
-                <img src="album2-cover.jpg" alt="Take Me Home">
+            <div class="album" onclick="showAlbumDetails(
+                'Take Me Home',
+                'November 2012',
+                'images/take_me_home.jpeg',
+                ['Little Things', 'Live While We\'re Young', 'Kiss You', 'C’mon C’mon', 'Last First Kiss']
+            )">
+                <img src="images/take_me_home.jpeg" alt="Take Me Home">
                 <h3>Take Me Home</h3>
                 <p>Released: November 2012</p>
                 <p>With songs like "Little Things" and "Live While We're Young", this album brought a new wave of success.</p>
             </div>
 
             <!-- Album 3 -->
-            <div class="album">
-                <img src="album3-cover.jpg" alt="Midnight Memories">
+            <div class="album" onclick="showAlbumDetails(
+                'Midnight Memories',
+                'November 2013',
+                'images/midnight_memories.jpeg',
+                ['Best Song Ever', 'Story of My Life', 'Little Things', 'Midnight Memories', 'Through the Dark']
+            )">
+                <img src="images/midnight_memories.jpeg" alt="Midnight Memories">
                 <h3>Midnight Memories</h3>
                 <p>Released: November 2013</p>
                 <p>Known for its more mature sound, "Midnight Memories" brought a rock edge to One Direction's pop roots.</p>
             </div>
 
             <!-- Album 4 -->
-            <div class="album">
-                <img src="album4-cover.jpg" alt="Four">
+            <div class="album" onclick="showAlbumDetails(
+                'Four',
+                'November 2014',
+                'images/four.jpeg',
+                ['Steal My Girl', 'Night Changes', 'No Control', 'Fireproof', '18']
+            )">
+                <img src="images/four.jpeg" alt="Four">
                 <h3>Four</h3>
                 <p>Released: November 2014</p>
                 <p>One Direction’s fourth studio album saw the band experiment with new sounds, including ballads and guitar-heavy tracks.</p>
             </div>
 
             <!-- Album 5 -->
-            <div class="album">
-                <img src="album5-cover.jpg" alt="Made in the A.M.">
+            <div class="album" onclick="showAlbumDetails(
+                'Made in the A.M.',
+                'November 2015',
+                'images/made_in_the_am.jpeg',
+                ['Drag Me Down', 'Perfect', 'End of the Day', 'History', 'Temporary Fix']
+            )">
+                <img src="images/made_in_the_am.jpeg" alt="Made in the A.M.">
                 <h3>Made in the A.M.</h3>
                 <p>Released: November 2015</p>
                 <p>Released after Zayn’s departure, this album marked the end of an era with songs like "Drag Me Down" and "Perfect".</p>
@@ -71,25 +95,19 @@
         </div>
     </section>
 
-    <!--footer section-->
-    <footer class="footer">
-        <div class="social-icons">
-            <a href="#" aria-label="Instagram" class="icon">Instagram</a>
-            <a href="#" aria-label="Facebook" class="icon">Facebook</a>
-            <a href="#" aria-label="Spotify" class="icon">Spotify</a>
-            <a href="#" aria-label="YouTube" class="icon">YouTube</a>
-            <a href="#" aria-label="X" class="icon">X</a>
-            <a href="#" aria-label="Pinterest" class="icon">Pinterest</a>
+    <!-- Popup Section -->
+    <section class="album-popup" id="albumPopup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img id="albumImage" src="" alt="Album Cover">
+            <div>
+                <h2 id="albumTitle"></h2>
+                <h4 id="albumYear"></h4>
+                <ol id="albumTracklist"></ol>
+            </div>
         </div>
+    </section>
 
-        <div class="links">
-            <a href="#">Terms</a> |
-            <a href="#">Privacy</a> |
-            <a href="#">Cookie Choices</a>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 One Direction. Copyright All Rights Reserved</p>
-        </div>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

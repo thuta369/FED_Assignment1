@@ -104,4 +104,109 @@ function submitBooking(event) {
   document.getElementById("thank-you-section").style.display = "block";
 }
 
+// Shopping Cart Logic
+let cart = [];
+let total = 0;
+
+// Add item to the cart
+function addToCart(productName, productPrice) {
+    // Add product to cart array
+    cart.push({ name: productName, price: productPrice });
+
+    // Update total
+    total += productPrice;
+
+    // Render cart
+    renderCart();
+}
+
+// Render cart contents
+function renderCart() {
+    const cartList = document.getElementById("cart-list");
+    const totalElement = document.getElementById("total");
+
+    // Clear existing cart items
+    cartList.innerHTML = "";
+
+    // Add items to the cart
+    cart.forEach((item, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+
+        // Remove button for each item
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.classList.add("remove-button");
+        removeButton.onclick = () => removeFromCart(index);
+
+        listItem.appendChild(removeButton);
+        cartList.appendChild(listItem);
+    });
+
+    // Update total
+    totalElement.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+// Remove item from the cart
+function removeFromCart(index) {
+    // Update total
+    total -= cart[index].price;
+
+    // Remove item from cart array
+    cart.splice(index, 1);
+
+    // Render cart again
+    renderCart();
+}
+
+// Initialize event listeners for Add to Cart buttons
+document.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const productName = e.target.getAttribute("data-name");
+        const productPrice = parseFloat(e.target.getAttribute("data-price"));
+        addToCart(productName, productPrice);
+    });
+});
+
+//album
+// Function to display the album popup with dynamic content
+function showAlbumDetails(title, year, imageSrc, tracklist) {
+  // Get the popup elements
+  const albumPopup = document.getElementById("albumPopup");
+  const albumImage = document.getElementById("albumImage");
+  const albumTitle = document.getElementById("albumTitle");
+  const albumYear = document.getElementById("albumYear");
+  const albumTracklist = document.getElementById("albumTracklist");
+
+  // Update the popup content
+  albumImage.src = imageSrc;
+  albumTitle.textContent = title;
+  albumYear.textContent = `Released: ${year}`;
+  albumTracklist.innerHTML = ""; // Clear previous tracklist
+
+  // Populate the tracklist dynamically
+  tracklist.forEach((track) => {
+      const trackItem = document.createElement("li");
+      trackItem.textContent = track;
+      albumTracklist.appendChild(trackItem);
+  });
+
+  // Show the popup
+  albumPopup.style.display = "block";
+}
+
+// Function to close the popup
+function closePopup() {
+  const albumPopup = document.getElementById("albumPopup");
+  albumPopup.style.display = "none";
+}
+
+// Event listener to close popup when clicking outside the popup content
+window.addEventListener("click", (event) => {
+  const albumPopup = document.getElementById("albumPopup");
+  if (event.target === albumPopup) {
+      closePopup();
+  }
+});
+
 

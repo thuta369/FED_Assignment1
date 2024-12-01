@@ -235,6 +235,7 @@ header a img {
     color: red;
 }
 
+
 /* TOUR SECTION */
 .tour-banner{
     background: url("images/Tour photo.jpg") no-repeat center center/cover;
@@ -815,9 +816,25 @@ footer a:hover {
     margin-top: 0;
 }
 
-/* Hover effects for images */
-.left-box1 img:hover, .right-box2 img:hover, .left-box3 img:hover, .right-box4 img:hover, .left-box5 img:hover {
-    content: url("images/louis image2.jpg");
+/* Hover effects for each box */
+.left-box1 img:hover {
+    content: url("images/louis_image_2.webp");
+}
+
+.right-box2 img:hover {
+    content: url("images/zayn image2.webp");
+}
+
+.left-box3 img:hover {
+    content: url("images/harry_styles_image2.webp");
+}
+
+.right-box4 img:hover {
+    content: url("images/liam_payne_image2.avif");
+}
+
+.left-box5 img:hover {
+    content: url("images/niall_image2.webp");
 }
 
 /* Make sure images in right box fill space without distortion */
@@ -1081,21 +1098,18 @@ footer a:hover {
     color: #333;
 }
 
-
-
-
-/*ALBUMS PAGE CSS*/
-.albums-header{
+/* ALBUMS PAGE CSS */
+.albums-header {
     position: relative;
-    background-image: url("images/team photo banner for store.jpg");
+    background-image: url("images/teambannerreleases.png");
     background-size: cover;
     background-position: center;
     height: 250px;
     padding-top: 40px;
-    text-align: center; 
+    text-align: center;
 }
 
-.banner-title-albums{
+.banner-title-albums {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -1121,6 +1135,14 @@ footer a:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+}
+
+/* Hover effect for albums */
+.album:hover {
+    transform: scale(1.05); /* Slightly enlarges the album */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adds a shadow */
+    transition: all 0.3s ease; /* Smooth hover animation */
+    cursor: pointer;
 }
 
 .album {
@@ -1149,6 +1171,79 @@ footer a:hover {
     color: #555;
 }
 
+/* Popup Container */
+.album-popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dim background */
+    justify-content: center; /* Center the popup horizontally */
+    align-items: center; /* Center the popup vertically */
+    z-index: 1000;
+    display: flex; /* Ensure it's a flex container for centering */
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+/* Popup Content - Horizontal Layout */
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; /* Make the popup content horizontal */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px; /* Increased width for horizontal layout */
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: 0 auto; /* Center the popup horizontally */
+}
+
+/* Close Button */
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Popup Image */
+.popup-content img {
+    width: 300px; /* Set a fixed width for the image */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 30px; /* Space between image and tracklist */
+}
+
+/* Popup Title and Tracklist */
+.popup-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.popup-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.popup-content ol {
+    text-align: left;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #333;
+    max-width: 500px; /* Limit width of the tracklist */
+}
+
+/* Blur background when popup is active */
+body.popup-active {
+    filter: blur(5px);
+    pointer-events: none; /* Prevent interactions with background */
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -1160,7 +1255,28 @@ footer a:hover {
         width: 80%;
         margin: 0 auto 20px auto;
     }
+
+    /* Make popup content stack vertically on smaller screens */
+    .popup-content {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        max-width: 700px;
+    }
+
+    .popup-content img {
+        width: 100%; /* Image will take up full width */
+        margin-right: 0; /* Remove margin for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .popup-content ol {
+        width: 100%; /* Tracklist will take full width on smaller screens */
+    }
 }
+
+
+
 
 /*STORE PAGE CSS*/
 .store-header{
@@ -1182,3 +1298,6 @@ footer a:hover {
     font-weight: bold;
     color: white;
 }
+
+
+
